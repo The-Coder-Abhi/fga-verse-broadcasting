@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/verseview-display/static/css/main.d5b3e327.css",
+    "main.js": "/verseview-display/static/js/main.663c61a1.js",
+    "static/media/logo.svg": "/verseview-display/static/media/logo.e94af782bdbb1a2e7e1429f91088f6c5.svg",
+    "index.html": "/verseview-display/index.html",
+    "main.d5b3e327.css.map": "/verseview-display/static/css/main.d5b3e327.css.map",
+    "main.663c61a1.js.map": "/verseview-display/static/js/main.663c61a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5b3e327.css",
+    "static/js/main.663c61a1.js"
+  ]
+}
