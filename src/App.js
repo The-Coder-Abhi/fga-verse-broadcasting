@@ -1,6 +1,6 @@
 import { useState,useEffect, useLayoutEffect, useRef } from 'react';
 import { db } from './firebase';
-import { ref as dbRef ,onValue } from 'firebase/database';
+import { ref as dbRef ,onValue, goOffline, goOnline } from 'firebase/database';
 import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
@@ -62,6 +62,30 @@ function App() {
   const primaryRef = useFitText(presentation.body1, 70);
   const secondaryRef = useFitText(presentation.body2, 55);
   
+  // ==========================================
+  // THE AUTO-DISCONNECT ENGINE
+  // ==========================================
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // The user minimized the app, locked their phone, or switched tabs.
+        // Disconnect immediately to give the connection to someone else!
+        goOffline(db);
+      } else {
+        // The user is looking at the screen again. Reconnect!
+        goOnline(db);
+      }
+    };
+
+    // Tell the browser to listen for the user switching tabs
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Cleanup the listener if the component closes
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
   useEffect(() => {
     const presentationRef = dbRef(db,'live_presentation');
     
