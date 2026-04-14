@@ -12,7 +12,9 @@ const Footer = () => {
     });
     return (
     <div className='footer-wrapper'>
+    <a href="https://www.youtube.com/@fgamumbai1984/live" target="_blank" rel="noreferrer">
         <img src="./logo.svg" alt="FGA logo" />
+    </a>
         <h4 className='footer-date'>{formattedDate}</h4>
     </div>
     )
