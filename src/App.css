@@ -104,6 +104,45 @@ body{
     font-weight: 700;
     letter-spacing: 1px;
 }
+.splash-screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f7f7f7;
+  gap: 1rem;
+}
+
+.splash-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+  /*pulsing effect for the logo */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.splash-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.splash-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* The Keyframes for the pulsing animation */
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
 /* @media screen and (max-width:1200px) {
     html{
         font-size: 75%;

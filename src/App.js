@@ -51,6 +51,7 @@ const useFitText = (text, maxFontSize) => {
 };
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
   
   const [presentation,setPresentation] = useState({
     title: "Connecting...",
@@ -62,18 +63,25 @@ function App() {
   const primaryRef = useFitText(presentation.body1, 70);
   const secondaryRef = useFitText(presentation.body2, 55);
   
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2500);
+
+    // Cleanup the timer if the component closes early
+    return () => clearTimeout(timer);
+  }, []);
+
   // ==========================================
   // THE AUTO-DISCONNECT ENGINE
   // ==========================================
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        // The user minimized the app, locked their phone, or switched tabs.
-        // Disconnect immediately to give the connection to someone else!
+        
         console.log("Tab hidden: Disconnecting from Firebase!");
         goOffline(db);
       } else {
-        // The user is looking at the screen again. Reconnect!
         console.log("Tab visible: Reconnecting to Firebase!");
         goOnline(db);
       }
@@ -114,6 +122,17 @@ function App() {
     return () => unsubscribe();
 
   },[]);
+
+  if (showSplash) {
+    return (
+      <div className="splash-screen">
+        {/* We are using the logo.svg that already exists in your React folder */}
+        <img src={logo} alt="Logo" className="splash-logo" />
+        <h1 className="splash-title">VerseView Broadcast</h1>
+        <p className="splash-subtitle">Connecting to live feed...</p>
+      </div>
+    );
+  }
   
   return (
     <div className={`presentation-wrapper ${presentation.type}`}>
