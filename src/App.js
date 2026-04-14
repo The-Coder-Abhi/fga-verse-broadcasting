@@ -70,9 +70,11 @@ function App() {
       if (document.hidden) {
         // The user minimized the app, locked their phone, or switched tabs.
         // Disconnect immediately to give the connection to someone else!
+        console.log("Tab hidden: Disconnecting from Firebase!");
         goOffline(db);
       } else {
         // The user is looking at the screen again. Reconnect!
+        console.log("Tab visible: Reconnecting to Firebase!");
         goOnline(db);
       }
     };
@@ -100,8 +102,13 @@ function App() {
         });
       }
     },(error) => {
-      console.error("Firebase Read Error:",error);
-      setPresentation({ title: "Connection Error", body1: "Please refresh the page.", body2:"", type: "error" });
+      console.error("Firebase Connection/Quota Error:", error);
+      setPresentation({ 
+        title: "Screen Full", 
+        body1: "We have reached our maximum viewer limit for today.", 
+        body2: "Please try refreshing in a few minutes!", 
+        type: "error" 
+      });
     });
 
     return () => unsubscribe();

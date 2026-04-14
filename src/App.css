@@ -85,6 +85,16 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.error .verse-title { 
+  color: #ff5e62; /* A soft, polite red */
+}
+.error .primary-language { 
+  color: #ffffff; 
+}
+.error .secondary-language {
+  color: #aaaaaa;
+  font-style: italic;
+}
 .footer-wrapper img{
     width: 7rem;
     height: auto;
