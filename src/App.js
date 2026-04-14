@@ -4,6 +4,7 @@ import { ref as dbRef ,onValue, goOffline, goOnline } from 'firebase/database';
 import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
+import Splash from './Splash';
 
 
 // ==========================================
@@ -51,7 +52,6 @@ const useFitText = (text, maxFontSize) => {
 };
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
   
   const [presentation,setPresentation] = useState({
     title: "Connecting...",
@@ -63,14 +63,7 @@ function App() {
   const primaryRef = useFitText(presentation.body1, 70);
   const secondaryRef = useFitText(presentation.body2, 55);
   
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2500);
-
-    // Cleanup the timer if the component closes early
-    return () => clearTimeout(timer);
-  }, []);
+  
 
   // ==========================================
   // THE AUTO-DISCONNECT ENGINE
@@ -122,19 +115,10 @@ function App() {
     return () => unsubscribe();
 
   },[]);
-
-  if (showSplash) {
-    return (
-      <div className="splash-screen">
-        {/* We are using the logo.svg that already exists in your React folder */}
-        <img src={logo} alt="Logo" className="splash-logo" />
-        <h1 className="splash-title">VerseView Broadcast</h1>
-        <p className="splash-subtitle">Connecting to live feed...</p>
-      </div>
-    );
-  }
   
   return (
+    <div>
+    <Splash/>
     <div className={`presentation-wrapper ${presentation.type}`}>
         <h2 className="verse-title">{presentation.title}</h2>
       <div className="content-wrapper">
@@ -144,7 +128,7 @@ function App() {
           </div>
         </div>
         {presentation.body2 && (
-        <div className="verse-body">
+          <div className="verse-body">
           <div ref={secondaryRef} className="text-fit-box secondary-language">
             {presentation.body2}
           </div>
@@ -153,6 +137,7 @@ function App() {
       </div>
       <Footer/>
     </div>
+  </div>
   );
 }
 
