@@ -11,7 +11,7 @@ function App() {
     <HashRouter basename="/fga-verse-broadcasting">
     <Routes>
       <Route path="/" element={<StageView/>}></Route>
-      <Route path="lowerThird" element={<LowerThird/>}></Route>
+      <Route path="/lowerThird" element={<LowerThird/>}></Route>
     </Routes>
     </HashRouter>
   );
