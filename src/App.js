@@ -8,7 +8,7 @@ function App() {
   return (
     // we are using HashRouter instead of BrowserRouter 
     // to avoid github page not foud error normal routing does on work on the github
-    <HashRouter basename="/fga-verse-broadcasting">
+    <HashRouter >
     <Routes>
       <Route path="/" element={<StageView/>}></Route>
       <Route path="/lowerThird" element={<LowerThird/>}></Route>

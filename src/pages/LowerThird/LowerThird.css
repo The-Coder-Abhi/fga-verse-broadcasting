@@ -4,9 +4,9 @@ body.transparent-broadcast {
   overflow: hidden; 
 }
 .lower-third-wrapper {
- border: 1px solid blue;
+ /* border: 1px solid blue; */
   position: absolute;
-  bottom: 50px; 
+  bottom: 0px; 
   left: 0;
   width: 100vw;
   display: flex;
@@ -54,7 +54,9 @@ body.transparent-broadcast {
 -------------------------------------- */
 .lower-third-text-box {
   position: absolute;
-  /* border: 3px solid green; */
+  
+  /* padding: px;
+  border: 3px solid green; */
   bottom: 90px; 
   left: 275px; 
   width: 75%; 
@@ -78,15 +80,15 @@ body.transparent-broadcast {
   position: absolute;
   /* border: 3px solid red; */
   
-  top: 20px;  
-  left: 100px; 
-  width: 260px; 
-  height: 45px; 
+  top: 7%;  
+  left: 7.8%; 
+  width: 20.5%; 
+  height: 18%; 
   
   color: #000000; 
   font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
   font-weight: 900; 
-  font-size: 18px;
+  font-size: 22px;
   
   display: flex;
   align-items: center;
@@ -99,11 +101,11 @@ body.transparent-broadcast {
 -------------------------------------- */
 .lower-third-text-box {
   position: absolute;
-  /* border: 3px solid green; */
-  bottom: 55px; 
-  left: 175px; 
-  width: 75%; 
-  height: 150px; 
+  padding: 5%;
+  bottom: 23%; 
+  left: 12%; 
+  width: 78%;
+  height: 50%;
   
   color: #ffffff;
   font-family: 'Arial', sans-serif; 
