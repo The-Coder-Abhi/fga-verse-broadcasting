@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react';
-import logo from './logo.svg';
+import logo from '../../img/logo.svg';
+import './Splash.css'
 
 const Splash = () => {
     const [showSplash, setShowSplash] = useState(true);
@@ -16,8 +17,7 @@ const Splash = () => {
     <div>
 
     {showSplash && (
-        <div 
-        className="splash-screen" 
+        <div className="splash-screen" 
         style={{ position: 'fixed', top: 0, left: 0, zIndex: 9999 }}
         >
           <img src={logo} alt="Logo" className="splash-logo" />

@@ -1,0 +1,118 @@
+body.transparent-broadcast {
+  background-color: transparent !important;
+  margin: 0;
+  overflow: hidden; 
+}
+.lower-third-wrapper {
+ border: 1px solid blue;
+  position: absolute;
+  bottom: 50px; 
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center; 
+}
+
+/* The Image Container */
+.lower-third-graphic {
+  width: 100vw; 
+  height: 40vh; 
+  background-image: url('../../img/LowerThird01.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  
+  /* CRITICAL: This allows us to position the text boxes inside the image */
+  position: relative; 
+  
+}
+
+/* -------------------------------------
+   TEXT BOX 1 : VERSE TITLE
+-------------------------------------- */
+.lower-third-title-box {
+  position: absolute;
+  /* border: 3px solid red; */
+  top: 60px;  
+  left: 120px; 
+  width: 420px; 
+  height: 60px; 
+  
+  color: #000000; 
+  font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
+  font-weight: 900; 
+  font-size: 32px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left-align the title */
+  padding-left: 20px; 
+}
+
+/* -------------------------------------
+   TEXT BOX 2: VERSE BODY
+-------------------------------------- */
+.lower-third-text-box {
+  position: absolute;
+  /* border: 3px solid green; */
+  bottom: 90px; 
+  left: 275px; 
+  width: 75%; 
+  height: 210px; 
+  
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+/* -------------------------------------
+   TEXT BOX 1 : VERSE TITLE
+-------------------------------------- */
+.lower-third-title-box {
+  position: absolute;
+  /* border: 3px solid red; */
+  
+  top: 20px;  
+  left: 100px; 
+  width: 260px; 
+  height: 45px; 
+  
+  color: #000000; 
+  font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
+  font-weight: 900; 
+  font-size: 18px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left-align the title */
+  padding-left: 20px; 
+}
+
+/* -------------------------------------
+   TEXT BOX 2 : VERSE BODY
+-------------------------------------- */
+.lower-third-text-box {
+  position: absolute;
+  /* border: 3px solid green; */
+  bottom: 55px; 
+  left: 175px; 
+  width: 75%; 
+  height: 150px; 
+  
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
