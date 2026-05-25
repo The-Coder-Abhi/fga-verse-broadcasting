@@ -10,7 +10,8 @@ function App() {
     // to avoid github page not foud error normal routing does on work on the github
     <HashRouter >
     <Routes>
-      <Route path="/" element={<StageView/>}></Route>
+      <Route path="/" element={<StageView themeClass=""/>}></Route>
+      <Route path="/new" element={<StageView themeClass="newStageView" />} />
       <Route path="/lowerThird" element={<LowerThird/>}></Route>
     </Routes>
     </HashRouter>

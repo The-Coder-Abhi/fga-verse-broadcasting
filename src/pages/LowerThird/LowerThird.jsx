@@ -50,7 +50,7 @@ const LowerThird = () => {
     // toggles versionChanger to switch language
     const toggleInterval = setInterval(() => {
       setVersionChanger((prev) => !prev);
-    }, 3000); 
+    }, 30000); 
 
     // 4. This cleanup function destroys the timer if a new verse arrives
     return () => clearInterval(toggleInterval);

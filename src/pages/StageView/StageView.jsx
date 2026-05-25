@@ -7,7 +7,7 @@ import useFitText from '../../hooks/useFitText';
 import useFirebaseDisconnect from '../../hooks/useFirebaseDisconnect';
 import Splash from '../../component/Splash/Splash';
 
-const StageView = () => {
+const StageView = ({ themeClass = "" }) => {
     const [presentation,setPresentation] = useState({
     title: "Connecting...",
     body: "",
@@ -53,7 +53,7 @@ const StageView = () => {
   return (
     <div>
     <Splash/>
-    <div className={`presentation-wrapper ${presentation.type}`}>
+    <div className={`presentation-wrapper ${presentation.type} ${themeClass}`}>
         <h2 className="verse-title">{presentation.title}</h2>
       <div className="content-wrapper">
         <div className="verse-body">
