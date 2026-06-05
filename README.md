@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# VerseView Broadcasting 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An automated system designed for broadcasting text and lyrics seamlessly to a web interface in real time. This project serves as a dynamic display solution, ideal for live environments where instantly synced, high-visibility text rendering is essential.
 
-## Available Scripts
+## 📸 Screenshots
+> **Note:** Use a side-by-side layout or a horizontal table to showcase the presenter dashboard alongside the live web broadcast interface.
 
-In the project directory, you can run:
+<table>
+  <tr>
+   <td align="center">
+      <b>Splash Screen</b><br>
+      <img src="https://github.com/user-attachments/assets/5e4ccd1b-eb23-48b9-87f5-f36b66f6cb0a" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+   <td align="center">
+      <b>Live Broadcast Interfac 01</b><br>
+      <img src="https://github.com/user-attachments/assets/189bfc6d-90bb-44e2-9f9f-4274706de090" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+   <td align="center">
+      <b>Live Broadcast Interface 02</b><br>
+      <img src="https://github.com/user-attachments/assets/7152521c-3801-4d31-881d-5f4378022330" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+   <td align="center">
+      <b>Live Broadcast Interface 03</b><br>
+      <img src="https://github.com/user-attachments/assets/65a70b9c-2e4f-4ca0-a9f1-141d4e8c73fd" width="100%"/>
+    </td>
+  </tr>
+</table>
 
-### `npm start`
+## 🌟 Core Features
+* **Real-Time Data Synchronization:** Leveraging a cloud database to broadcast lyrics and textual changes instantaneously across all connected clients without page refreshes.
+* **Auto-Scaling Text Hooks:** Custom frontend logic that dynamically calculates screen real estate and scales text up or down automatically, ensuring long verses never overflow and remain perfectly readable on any display size.
+* **Polished User Experience:** Features a clean web splash screen for seamless initial asset loading and connection establishment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
+* **Frontend:** React.js, Custom CSS / Layout Hooks
+* **Backend / Database:** Firebase (Realtime Database / Firestore, Hosting)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Technical Highlights
+* **Dynamic Typography:** Built custom React hooks to manage auto-scaling text properties dynamically based on view window dimensions, mitigating standard CSS break-points for fluid typography.
+* **State Management:** Integrated real-time data listeners to minimize latency between the controller input and the public broadcast view.
 
-### `npm test`
+## 💻 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to run the broadcasting system locally.
 
-### `npm run build`
+### Prerequisites
+* Node.js (v16+ recommended)
+* A Firebase account and project set up
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clone the repository:**
+   git clone https://github.com/The-Coder-Abhi/fga-verse-broadcasting.git
+   cd fga-verse-broadcasting
