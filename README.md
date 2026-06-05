@@ -3,7 +3,6 @@
 An automated system designed for broadcasting text and lyrics seamlessly to a web interface in real time. This project serves as a dynamic display solution, ideal for live environments where instantly synced, high-visibility text rendering is essential.
 
 ## 📸 Screenshots
-> **Note:** Use a side-by-side layout or a horizontal table to showcase the presenter dashboard alongside the live web broadcast interface.
 
 <table>
   <tr>
