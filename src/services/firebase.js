@@ -11,6 +11,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
+console.log("DEBUG: Database URL is:", process.env.REACT_APP_FIREBASE_DATABASE_URL);
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
