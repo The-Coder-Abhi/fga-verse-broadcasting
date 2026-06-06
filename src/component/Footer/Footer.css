@@ -16,3 +16,14 @@
     font-weight: 700;
     letter-spacing: 1px;
 }
+@media (min-width: 1280px) and (max-width: 1920px) {
+.footer-wrapper img{
+    width: 14rem;
+    /* height:auto; */
+}
+.footer-date{
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+}

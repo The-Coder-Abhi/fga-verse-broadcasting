@@ -80,3 +80,10 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+@media (min-width: 1280px) and (max-width: 1920px) {
+.verse-title{
+    flex: 0 0 auto; /* Tells the title to NEVER stretch or shrink */
+    margin-bottom: 4rem;
+    font-size: 5rem;
+}
+}
