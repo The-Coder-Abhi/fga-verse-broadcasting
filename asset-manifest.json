@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/fga-verse-broadcasting/static/css/main.c9c53979.css",
+    "main.css": "/fga-verse-broadcasting/static/css/main.acbd9c0b.css",
     "main.js": "/fga-verse-broadcasting/static/js/main.c1c36fa7.js",
     "static/media/newbackground.png": "/fga-verse-broadcasting/static/media/newbackground.3fedbd2b09cca296e23b.png",
     "static/media/LowerThird01.png": "/fga-verse-broadcasting/static/media/LowerThird01.fdf4f67d7528f10ab01a.png",
     "static/media/logo.svg": "/fga-verse-broadcasting/static/media/logo.e94af782bdbb1a2e7e1429f91088f6c5.svg",
     "index.html": "/fga-verse-broadcasting/index.html",
-    "main.c9c53979.css.map": "/fga-verse-broadcasting/static/css/main.c9c53979.css.map",
+    "main.acbd9c0b.css.map": "/fga-verse-broadcasting/static/css/main.acbd9c0b.css.map",
     "main.c1c36fa7.js.map": "/fga-verse-broadcasting/static/js/main.c1c36fa7.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9c53979.css",
+    "static/css/main.acbd9c0b.css",
     "static/js/main.c1c36fa7.js"
   ]
 }
