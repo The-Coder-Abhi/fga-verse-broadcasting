@@ -11,8 +11,9 @@
 }
 .verse-title{
     flex: 0 0 auto; /* Tells the title to NEVER stretch or shrink */
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 2.5rem;
+    font-family:  "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
 }
 .content-wrapper{
     flex: 1;
