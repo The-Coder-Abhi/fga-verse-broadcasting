@@ -76,7 +76,8 @@
 
 /* Changing Background */
 .newStageView{
-    background: url(../../img/newbackground.png);
+    /* background: url(../../img/newbackground.png); */
+    background: url(../../img/StageView.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
