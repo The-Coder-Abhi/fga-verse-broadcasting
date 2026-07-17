@@ -15,8 +15,8 @@ const StageView = ({ themeClass = "" }) => {
   });
 
   //setting max size for useFitText Hook
-  const primaryRef = useFitText(presentation.body1, 100);
-  const secondaryRef = useFitText(presentation.body2, 85);
+  const primaryRef = useFitText(presentation.body1, 120);
+  const secondaryRef = useFitText(presentation.body2, 105);
   
 
   // THE AUTO-DISCONNECTION
