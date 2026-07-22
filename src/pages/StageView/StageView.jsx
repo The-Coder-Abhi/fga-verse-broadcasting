@@ -14,6 +14,8 @@ const StageView = ({ themeClass = "" }) => {
     type: "standby"
   });
 
+  const isBlank = presentation.body1 === "Blank";
+  
   //setting max size for useFitText Hook
   const primaryRef = useFitText(presentation.body1, 120);
   const secondaryRef = useFitText(presentation.body2, 105);
@@ -53,12 +55,12 @@ const StageView = ({ themeClass = "" }) => {
   return (
     <div>
     <Splash/>
-    <div className={`presentation-wrapper ${presentation.type} ${themeClass}`}>
+    <div className={`presentation-wrapper ${presentation.type} ${themeClass} ${isBlank ? 'Blank' : ''}`}>
         <h2 className="verse-title">{presentation.title}</h2>
       <div className="content-wrapper">
         <div className="verse-body">
           <div ref={primaryRef} className="text-fit-box primary-language">
-            {presentation.body1}
+            {isBlank || presentation.body1 === "Blank" ? "" : presentation.body1}
           </div>
         </div>
         {presentation.body2 && (
@@ -69,7 +71,7 @@ const StageView = ({ themeClass = "" }) => {
         </div>
       )}
       </div>
-      <Footer/>
+      {!isBlank &&<Footer/>}
     </div>
   </div>
   )

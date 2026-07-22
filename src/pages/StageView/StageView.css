@@ -1,5 +1,6 @@
 .presentation-wrapper{
     /* border: 10px solid red; */
+    background-color: #111111;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -8,6 +9,8 @@
     align-items: center;
     padding: 5%;
     /* gap: 2rem; */
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
 }
 .verse-title{
     flex: 0 0 auto; /* Tells the title to NEVER stretch or shrink */
@@ -92,4 +95,8 @@
     font-size: 5rem;
 }
 
+}
+.Blank{
+    opacity: 0 !important;
+    pointer-events: none;
 }

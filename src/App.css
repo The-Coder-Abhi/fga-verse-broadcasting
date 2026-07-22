@@ -9,7 +9,7 @@ html{
     font-size: 90%;
 }
 body{
-    background-color: #111111;
+    background-color: transparent !important;
     color: #f7f7f7;
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
