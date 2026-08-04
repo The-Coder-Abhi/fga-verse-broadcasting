@@ -1,4 +1,5 @@
 # VerseView Broadcasting 🚀
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Website-blue?style=for-the-badge)](https://the-coder-abhi.github.io/ChatZone_WebApp/)
 
 An automated system designed for broadcasting text and lyrics seamlessly to a web interface in real time. This project serves as a dynamic display solution, ideal for live environments where instantly synced, high-visibility text rendering is essential.
 
