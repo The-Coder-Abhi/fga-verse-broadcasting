@@ -56,5 +56,34 @@ Follow these steps to run the broadcasting system locally.
 ### Installation & Setup
 
 1. **Clone the repository:**
+   ```bash
    git clone https://github.com/The-Coder-Abhi/fga-verse-broadcasting.git
    cd fga-verse-broadcasting
+
+2. Navigate to the project directory:
+   ```bash
+   cd ChatZone-React
+
+3. Install dependencies:
+   ```bash
+   npm install
+
+### Firebase Configuration
+1. Create a project on the Firebase Console and enable Authentication and Firestore.
+2. Create a .env file in the root directory of your project and add your API keys:
+   
+   ```bash
+   # Firebase Credentials
+   REACT_APP_FIREBASE_API_KEY="your-api-key"
+   REACT_APP_FIREBASE_AUTH_DOMAIN="your-auth-domain"
+   REACT_APP_FIREBASE_PROJECT_ID="your-project-id"
+   REACT_APP_FIREBASE_STORAGE_BUCKET="your-storage-bucket"
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID="your-messaging-sender-id"
+   REACT_APP_FIREBASE_APP_ID="your-app-id"
+
+### Running the App
+```bash
+  npm start
+```
+
+The application will launch in your default web browser at http://localhost:3000.
