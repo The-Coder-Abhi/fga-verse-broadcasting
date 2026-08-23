@@ -99,7 +99,8 @@ body.transparent-broadcast {
   width: 20.5%; 
   height: 18%; 
   
-  color: #ffffff; 
+  color: #FFEA00;
+  /* color: #000000;  */
   font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
   font-weight: 900; 
   font-size: 22px;
@@ -127,8 +128,7 @@ body.transparent-broadcast {
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
 
-   /* color: #FFEA00; */
-   color: #000000;
+   color: #FFEA00;
   font-family: 'Baloo Chettan 2', 'Noto Serif Devanagari', sans-serif; 
   font-weight: 900;
   text-align: center;
