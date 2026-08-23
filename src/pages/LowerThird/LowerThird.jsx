@@ -13,6 +13,8 @@ const LowerThird = () => {
     body2: "" 
   });
 
+  const isBlank = presentation.body1 === "Blank";
+
   // Determine which text should currently be on screen
   const currentText = versionChanger ? presentation.body1 : presentation.body2;
   
@@ -78,15 +80,15 @@ const LowerThird = () => {
   
   
   return (
-    <div className="lower-third-wrapper">
+    <div className={`lower-third-wrapper ${isBlank ? 'Blank' : ''}`}>
       <div className="lower-third-graphic">
         
         {/* The Title Box */}
-        {presentation.title && (
+         {/*{presentation.title && (
           <div className="lower-third-title-box">
             {presentation.title}
           </div>
-        )}
+        )}*/}
         
         {/* The Main Verse Box */}
         <div ref={textRef} className="lower-third-text-box">

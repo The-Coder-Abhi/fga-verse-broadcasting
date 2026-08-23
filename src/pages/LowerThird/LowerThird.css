@@ -17,10 +17,11 @@ body.transparent-broadcast {
 .lower-third-graphic {
   width: 100vw; 
   height: 40vh; 
-  background-image: url('../../img/LowerThird01.png'); 
+  background-color: transparent;
+  /* background-image: url('../../img/LowerThird01.png'); 
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: bottom center; */
   
   /* CRITICAL: This allows us to position the text boxes inside the image */
   position: relative; 
@@ -117,4 +118,8 @@ body.transparent-broadcast {
   align-items: center;
   justify-content: center;
 }
+}
+.Blank{
+    opacity: 0 !important;
+    pointer-events: none;
 }
