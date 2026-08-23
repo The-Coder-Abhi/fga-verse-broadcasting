@@ -17,11 +17,10 @@ body.transparent-broadcast {
 .lower-third-graphic {
   width: 100vw; 
   height: 40vh; 
-  background-color: transparent;
-  /* background-image: url('../../img/LowerThird01.png'); 
+  background-image: url('../../img/LowerThird01.png'); 
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom center; */
+  background-position: bottom center;
   
   /* CRITICAL: This allows us to position the text boxes inside the image */
   position: relative; 
@@ -58,29 +57,16 @@ body.transparent-broadcast {
   
   /* padding: px;
   border: 3px solid green; */
-  /* bottom: 90px;  */
-  /* left: 100px;  */
-  /* width: 90%; 
-  height: 50%;  */
-
-  padding: 3%;
-  bottom: 40%; 
-  left: 7%; 
-  width: 90%;
-  height:70%;
+  bottom: 90px; 
+  left: 275px; 
+  width: 75%; 
+  height: 210px; 
   
-  /* color: #ffffff; */
-  color: #FFEA00;
-  font-family: 'Baloo Chettan 2', 'Noto Serif Devanagari', sans-serif; 
-  font-weight: 900;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold;
   text-align: center;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
-  text-shadow: 
-  2px 2px 0px #000000, 
-  -2px -2px 0px #000000, 
-  2px -2px 0px #000000, 
-  -2px 2px 0px #000000,
-  0px 4px 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
   
   display: flex;
   align-items: center;
@@ -99,8 +85,7 @@ body.transparent-broadcast {
   width: 20.5%; 
   height: 18%; 
   
-  color: #FFEA00;
-  /* color: #000000;  */
+  color: #000000; 
   font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
   font-weight: 900; 
   font-size: 22px;
@@ -116,36 +101,20 @@ body.transparent-broadcast {
 -------------------------------------- */
 .lower-third-text-box {
   position: absolute;
-  padding: 3%;
-  bottom: 40%; 
+  padding: 5%;
+  bottom: 23%; 
   left: 7%; 
   width: 90%;
-  height:70%;
+  height: 50%;
   
-  /* color: #ffffff;
+  color: #ffffff;
   font-family: 'Arial', sans-serif; 
-  font-weight: 900;
+  font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
-
-   color: #FFEA00;
-  font-family: 'Baloo Chettan 2', 'Noto Serif Devanagari', sans-serif; 
-  font-weight: 900;
-  text-align: center;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
-  text-shadow: 
-  2px 2px 0px #000000, 
-  -2px -2px 0px #000000, 
-  2px -2px 0px #000000, 
-  -2px 2px 0px #000000,
-  0px 4px 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
   
   display: flex;
   align-items: center;
   justify-content: center;
 }
-}
-.Blank{
-    opacity: 0 !important;
-    pointer-events: none;
 }

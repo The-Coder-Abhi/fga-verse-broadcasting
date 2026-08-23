@@ -14,11 +14,13 @@ const LowerThird = () => {
   });
 
   const isBlank = presentation.body1 === "Blank";
+  const isSong = presentation.title === "Live Worship";
+
 
   // Determine which text should currently be on screen
   const currentText = versionChanger ? presentation.body1 : presentation.body2;
   
-  const textRef = useFitText(currentText, 150);
+  const textRef = useFitText(currentText, 45);
   
   useFirebaseDisconnect(db);
 
@@ -84,12 +86,18 @@ const LowerThird = () => {
       <div className="lower-third-graphic">
         
         {/* The Title Box */}
-         {/*{presentation.title && (
+        {/* {presentation.title && (
           <div className="lower-third-title-box">
             {presentation.title}
           </div>
-        )}*/}
+        )} */}
         
+        {!isSong && (
+          <div className="lower-third-title-box">
+            {presentation.title}
+          </div>
+        )}
+
         {/* The Main Verse Box */}
         <div ref={textRef} className="lower-third-text-box">
           {currentText}
