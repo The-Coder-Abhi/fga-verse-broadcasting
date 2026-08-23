@@ -59,14 +59,14 @@ body.transparent-broadcast {
   /* padding: px;
   border: 3px solid green; */
   bottom: 90px; 
-  left: 275px; 
-  width: 75%; 
-  height: 210px; 
+  /* left: 100px;  */
+  width: 90%; 
+  height: 50%; 
   
   /* color: #ffffff; */
   color: #FFEA00;
   font-family: 'Baloo Chettan 2', 'Noto Serif Devanagari', sans-serif; 
-  font-weight: bold;
+  font-weight: 900;
   text-align: center;
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
   text-shadow: 
