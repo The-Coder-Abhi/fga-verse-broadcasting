@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/fga-verse-broadcasting/static/css/main.54c787d1.css",
-    "main.js": "/fga-verse-broadcasting/static/js/main.d806bfc6.js",
+    "main.css": "/fga-verse-broadcasting/static/css/main.25d0aac3.css",
+    "main.js": "/fga-verse-broadcasting/static/js/main.77e5f4c7.js",
     "static/media/StageView.png": "/fga-verse-broadcasting/static/media/StageView.9bd78b14e0428a43f595.png",
+    "static/media/LowerThird01.png": "/fga-verse-broadcasting/static/media/LowerThird01.fdf4f67d7528f10ab01a.png",
     "static/media/logo.svg": "/fga-verse-broadcasting/static/media/logo.e94af782bdbb1a2e7e1429f91088f6c5.svg",
     "index.html": "/fga-verse-broadcasting/index.html",
-    "main.54c787d1.css.map": "/fga-verse-broadcasting/static/css/main.54c787d1.css.map",
-    "main.d806bfc6.js.map": "/fga-verse-broadcasting/static/js/main.d806bfc6.js.map"
+    "main.25d0aac3.css.map": "/fga-verse-broadcasting/static/css/main.25d0aac3.css.map",
+    "main.77e5f4c7.js.map": "/fga-verse-broadcasting/static/js/main.77e5f4c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.54c787d1.css",
-    "static/js/main.d806bfc6.js"
+    "static/css/main.25d0aac3.css",
+    "static/js/main.77e5f4c7.js"
   ]
 }
