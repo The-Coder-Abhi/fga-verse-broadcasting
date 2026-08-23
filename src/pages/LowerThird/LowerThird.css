@@ -58,10 +58,16 @@ body.transparent-broadcast {
   
   /* padding: px;
   border: 3px solid green; */
-  bottom: 90px; 
+  /* bottom: 90px;  */
   /* left: 100px;  */
-  width: 90%; 
-  height: 50%; 
+  /* width: 90%; 
+  height: 50%;  */
+
+  padding: 3%;
+  bottom: 40%; 
+  left: 7%; 
+  width: 90%;
+  height:70%;
   
   /* color: #ffffff; */
   color: #FFEA00;
@@ -115,11 +121,23 @@ body.transparent-broadcast {
   width: 90%;
   height:70%;
   
-  color: #ffffff;
+  /* color: #ffffff;
   font-family: 'Arial', sans-serif; 
   font-weight: 900;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+
+   color: #FFEA00;
+  font-family: 'Baloo Chettan 2', 'Noto Serif Devanagari', sans-serif; 
+  font-weight: 900;
+  text-align: center;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
+  text-shadow: 
+  2px 2px 0px #000000, 
+  -2px -2px 0px #000000, 
+  2px -2px 0px #000000, 
+  -2px 2px 0px #000000,
+  0px 4px 10px rgba(0, 0, 0, 0.8);
   
   display: flex;
   align-items: center;
