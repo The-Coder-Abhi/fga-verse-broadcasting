@@ -63,11 +63,18 @@ body.transparent-broadcast {
   width: 75%; 
   height: 210px; 
   
-  color: #ffffff;
-  font-family: 'Arial', sans-serif; 
+  /* color: #ffffff; */
+  color: #FFEA00;
+  font-family: 'Baloo Chettan 2', 'Noto Serif Devanagari', sans-serif; 
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
+  text-shadow: 
+  2px 2px 0px #000000, 
+  -2px -2px 0px #000000, 
+  2px -2px 0px #000000, 
+  -2px 2px 0px #000000,
+  0px 4px 10px rgba(0, 0, 0, 0.8);
   
   display: flex;
   align-items: center;
