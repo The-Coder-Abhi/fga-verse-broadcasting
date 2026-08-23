@@ -18,7 +18,7 @@ const LowerThird = () => {
   // Determine which text should currently be on screen
   const currentText = versionChanger ? presentation.body1 : presentation.body2;
   
-  const textRef = useFitText(currentText, 100);
+  const textRef = useFitText(currentText, 150);
   
   useFirebaseDisconnect(db);
 
