@@ -14,7 +14,7 @@ function App() {
       <Route path="/" element={<StageView themeClass=""/>}></Route>
       <Route path="/new" element={<StageView themeClass="newStageView" />} />
       <Route path="/lowerThird" element={<LowerThird/>}></Route>
-      <Route path="/splitView" element={<SplitStageView/>}></Route>
+      <Route path="/splitView" element={<SplitStageView  themeClass="newStageView"/>}></Route>
     </Routes>
     </HashRouter>
   );
