@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../../services/firebase';
 import { ref as dbRef, onValue } from 'firebase/database';
 import OBSWebSocket from 'obs-websocket-js';
-import './StageView.css'; // Reusing your existing styles
+import '../StageView/StageView.css'; // Reusing existing styles
 import Footer from '../../component/Footer/Footer';
 import useFitText from '../../hooks/useFitText';
 import useFirebaseDisconnect from '../../hooks/useFirebaseDisconnect';
