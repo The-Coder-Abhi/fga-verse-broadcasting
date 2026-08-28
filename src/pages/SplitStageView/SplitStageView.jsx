@@ -58,7 +58,7 @@ const SplitStageView = ({ themeClass = "" }) => {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Main DSLR' });
         } else if (isSong) {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Song View' });
-        }else {
+        }else if (!isBlank && !isSong) {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Verse View' });
         }
       } catch (error) {
