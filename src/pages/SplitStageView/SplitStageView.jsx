@@ -115,7 +115,7 @@ const SplitStageView = ({ themeClass = "" }) => {
             </div>
           )}
         </div>
-        {!isBlank || !isSong ? <Footer/> : null}
+        {!isBlank && !isSong ? <Footer/> : null}
       </div>
     </div>
   );
