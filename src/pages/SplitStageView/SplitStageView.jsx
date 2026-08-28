@@ -21,6 +21,7 @@ const SplitStageView = ({ themeClass = "" }) => {
   const [obsConnected, setObsConnected] = useState(false);
 
   const isBlank = presentation.body1 === "Blank";
+  const isSong = presentation.title === "Live Worship";
   
   const primaryRef = useFitText(presentation.body1, 120);
   const secondaryRef = useFitText(presentation.body2, 105);
@@ -54,7 +55,9 @@ const SplitStageView = ({ themeClass = "" }) => {
       try {
         if (isBlank) {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Main DSLR' });
-        } else {
+        } else if (isSong) {
+          await obs.call('SetCurrentProgramScene', { sceneName: 'Song View' });
+        }else {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Verse View' });
         }
       } catch (error) {
@@ -63,7 +66,7 @@ const SplitStageView = ({ themeClass = "" }) => {
     };
 
     switchScene();
-  }, [isBlank, obsConnected]);
+  }, [isBlank, isSong, obsConnected]);
 
   // 3. FIREBASE CONNECTION 
   useEffect(() => {
@@ -111,7 +114,7 @@ const SplitStageView = ({ themeClass = "" }) => {
             </div>
           )}
         </div>
-        {!isBlank && <Footer/>}
+        {!isBlank || isSong ? <Footer/> : null}
       </div>
     </div>
   );
