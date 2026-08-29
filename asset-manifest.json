@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/fga-verse-broadcasting/static/css/main.39ce2b2d.css",
-    "main.js": "/fga-verse-broadcasting/static/js/main.02cad6a6.js",
+    "main.css": "/fga-verse-broadcasting/static/css/main.64f228f9.css",
+    "main.js": "/fga-verse-broadcasting/static/js/main.9d7f1800.js",
     "static/media/StageView.png": "/fga-verse-broadcasting/static/media/StageView.9bd78b14e0428a43f595.png",
     "static/media/LowerThird.png": "/fga-verse-broadcasting/static/media/LowerThird.5889001d1ba6162dcb0d.png",
     "static/media/logo.svg": "/fga-verse-broadcasting/static/media/logo.e94af782bdbb1a2e7e1429f91088f6c5.svg",
     "index.html": "/fga-verse-broadcasting/index.html",
-    "main.39ce2b2d.css.map": "/fga-verse-broadcasting/static/css/main.39ce2b2d.css.map",
-    "main.02cad6a6.js.map": "/fga-verse-broadcasting/static/js/main.02cad6a6.js.map"
+    "main.64f228f9.css.map": "/fga-verse-broadcasting/static/css/main.64f228f9.css.map",
+    "main.9d7f1800.js.map": "/fga-verse-broadcasting/static/js/main.9d7f1800.js.map"
   },
   "entrypoints": [
-    "static/css/main.39ce2b2d.css",
-    "static/js/main.02cad6a6.js"
+    "static/css/main.64f228f9.css",
+    "static/js/main.9d7f1800.js"
   ]
 }
