@@ -22,7 +22,7 @@ const SplitStageView = ({ themeClass = "" }) => {
 
   const isBlank = presentation.body1 === "Blank";
   const isSong = presentation.title === "Live Worship";
-  console.log(presentation.title);
+  // console.log(presentation.title);
   
   const primaryRef = useFitText(presentation.body1, 120);
   const secondaryRef = useFitText(presentation.body2, 105);

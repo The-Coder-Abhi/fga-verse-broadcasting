@@ -1,0 +1,136 @@
+body.transparent-broadcast {
+  background-color: transparent !important;
+  margin: 0;
+  overflow: hidden; 
+}
+@keyframes flyInFromBottom {
+  0% {
+    transform: translateY(100%); /* Starts completely off-screen at the bottom */
+  }
+  100% {
+    transform: translateY(0); /* Ends at its original position */
+  }
+}
+.lyrics-view-wrapper {
+    background-color: #111111;
+ /* border: 1px solid blue; */
+  position: absolute;
+  bottom: 0px; 
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  animation: flyInFromBottom 1s ease-out forwards;
+}
+
+/* The Image Container */
+.lyrics-view-graphic {
+  width: 100vw; 
+  height: 25vh; 
+  /* background-image: url('../../img/LowerThird.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center; */
+  
+  /* CRITICAL: This allows us to position the text boxes inside the image */
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------------------------
+   TEXT BOX 1 : VERSE TITLE
+-------------------------------------- */
+.lyrics-view-title-box {
+  position: absolute;
+  /* border: 3px solid red; */
+  top: 60px;  
+  left: 120px; 
+  width: 420px; 
+  height: 60px; 
+  
+  color: #000000; 
+  font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
+  font-weight: 900; 
+  font-size: 32px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left-align the title */
+  padding-left: 20px; 
+}
+
+/* -------------------------------------
+   TEXT BOX 2: VERSE BODY
+-------------------------------------- */
+.lyrics-view-text-box {
+    /* border: 3px solid green; */
+  /* position: ; */
+  
+  /* padding: px;
+  border: 3px solid green; */
+  /* bottom: 120px;  */
+  /* left: 250px;  */
+  width: 90%; 
+  height: 210px; 
+  
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+/* -------------------------------------
+   TEXT BOX 1 : VERSE TITLE
+-------------------------------------- */
+.lyrics-view-title-box {
+  position: absolute;
+  /* border: 3px solid red; */
+  
+  top: 7%;  
+  left: 7.8%; 
+  width: 20.5%; 
+  height: 18%; 
+  
+  color: #000000; 
+  font-family: "Baloo Chettan 2", "Noto Serif Devanagari", sans-serif ;
+  font-weight: 900; 
+  font-size: 22px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left-align the title */
+  padding-left: 20px; 
+}
+
+/* -------------------------------------
+   TEXT BOX 2 : VERSE BODY
+-------------------------------------- */
+.lyrics-view-text-box {
+  position: absolute;
+  padding: 5%;
+  /* bottom: 0%;  */
+  left: 7%; 
+  width: 90%;
+  height: 50%;
+  
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; 
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
