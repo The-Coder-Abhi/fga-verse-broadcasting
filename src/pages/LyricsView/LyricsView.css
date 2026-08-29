@@ -21,7 +21,7 @@ body.transparent-broadcast {
   display: flex;
   align-items: center;
   justify-content: center; 
-  animation: flyInFromBottom 1s ease-out forwards;
+  animation: flyInFromBottom 1s ease-out 0.4s forwards;
 }
 
 /* The Image Container */
