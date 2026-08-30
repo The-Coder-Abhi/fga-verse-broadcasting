@@ -6,7 +6,7 @@ import OBSWebSocket from 'obs-websocket-js';
 import useFirebaseDisconnect from '../../hooks/useFirebaseDisconnect';
 import './LyricsView.css'
 
-const obs = new OBSWebSocket();
+// const obs = new OBSWebSocket();
 
 const LyricsView = () => {
     const [versionChanger, setVersionChanger] = useState(true);
@@ -16,7 +16,7 @@ const LyricsView = () => {
     body2: "" 
   });
 
-  const [obsConnected, setObsConnected] = useState(false);
+  // const [obsConnected, setObsConnected] = useState(false);
 
   const isBlank = presentation.body1 === "Blank";
   const isSong = presentation.title === "Live Worship";
@@ -29,44 +29,44 @@ const LyricsView = () => {
   
   useFirebaseDisconnect(db);
 
-  useEffect(() => {
-      const connectOBS = async () => {
-        try {
-          await obs.connect('ws://localhost:4455', 'Abhi2003');
-          console.log("SplitStageView connected to OBS WebSocket");
-          setObsConnected(true);
-        } catch (error) {
-          console.error("Failed to connect to OBS", error);
-        }
-      };
+  // useEffect(() => {
+  //     const connectOBS = async () => {
+  //       try {
+  //         await obs.connect('ws://localhost:4455', 'Abhi2003');
+  //         console.log("SplitStageView connected to OBS WebSocket");
+  //         setObsConnected(true);
+  //       } catch (error) {
+  //         console.error("Failed to connect to OBS", error);
+  //       }
+  //     };
       
-      connectOBS();
+  //     connectOBS();
   
-      return () => {
-        obs.disconnect();
-      };
-    }, []);
+  //     return () => {
+  //       obs.disconnect();
+  //     };
+  //   }, []);
   
-    // 2. TRIGGER OBS SCENE CHANGE
-    useEffect(() => {
-      const switchScene = async () => {
-        if (!obsConnected) return; 
+  //   // 2. TRIGGER OBS SCENE CHANGE
+  //   useEffect(() => {
+  //     const switchScene = async () => {
+  //       if (!obsConnected) return; 
         
-        try {
-          if (isBlank) {
-            await obs.call('SetCurrentProgramScene', { sceneName: 'Main DSLR' });
-          } else if (isSong) {
-            await obs.call('SetCurrentProgramScene', { sceneName: 'Song View' });
-          }else if (!isBlank && !isSong) {
-            await obs.call('SetCurrentProgramScene', { sceneName: 'Verse View' });
-          }
-        } catch (error) {
-          console.error("Scene switch failed", error);
-        }
-      };
+  //       try {
+  //         if (isBlank) {
+  //           await obs.call('SetCurrentProgramScene', { sceneName: 'Main DSLR' });
+  //         } else if (isSong) {
+  //           await obs.call('SetCurrentProgramScene', { sceneName: 'Song View' });
+  //         }else if (!isBlank && !isSong) {
+  //           await obs.call('SetCurrentProgramScene', { sceneName: 'Verse View' });
+  //         }
+  //       } catch (error) {
+  //         console.error("Scene switch failed", error);
+  //       }
+  //     };
   
-      switchScene();
-    }, [isBlank, isSong, obsConnected]);
+  //     switchScene();
+  //   }, [isBlank, isSong, obsConnected]);
 
   useEffect(() =>{
     const presentationRef = dbRef(db, 'live_presentation');
