@@ -26,18 +26,21 @@ export default function ObsSourceToggler() {
     };
   }, []);
 
-  // Helper function to show or hide a specific source in the target scene
+  // Helper function to show or hide a source in the LIVE (Program) scene
   const setSourceVisibility = async (sourceName, isVisible) => {
     try {
-      // 1. Get the internal Item ID for the source within "Song View"
+      // 1. Ask OBS for the name of the scene currently live in Program
+      const { currentProgramSceneName } = await obs.call('GetCurrentProgramScene');
+
+      // 2. Get the internal Item ID for the source within that live scene
       const { sceneItemId } = await obs.call('GetSceneItemId', {
-        sceneName: TARGET_SCENE,
+        sceneName: currentProgramSceneName,
         sourceName: sourceName
       });
 
-      // 2. Set the visibility using that ID
+      // 3. Set the visibility using that ID on the live scene
       await obs.call('SetSceneItemEnabled', {
-        sceneName: TARGET_SCENE,
+        sceneName: currentProgramSceneName,
         sceneItemId: sceneItemId,
         sceneItemEnabled: isVisible
       });
