@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../../services/firebase'; 
 import { ref as dbRef, onValue } from 'firebase/database';
 import useFitText from '../../hooks/useFitText';
-import OBSWebSocket from 'obs-websocket-js';
+// import OBSWebSocket from 'obs-websocket-js';
 import useFirebaseDisconnect from '../../hooks/useFirebaseDisconnect';
 import './LyricsView.css'
 
