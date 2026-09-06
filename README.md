@@ -30,6 +30,13 @@ An automated system designed for broadcasting text and lyrics seamlessly to a we
       <img src="https://github.com/user-attachments/assets/65a70b9c-2e4f-4ca0-a9f1-141d4e8c73fd" width="100%"/>
     </td>
   </tr>
+  <tr>
+   <td align="center">
+      <b>New Feature</b><br/>
+     <img width="100%" alt="demo vid" src="https://github.com/user-attachments/assets/35905ba0-554f-4ead-98cf-2dbee98845d8" />
+    </td>
+  </tr>
+
 </table>
 
 ## 🌟 Core Features
@@ -85,5 +92,7 @@ Follow these steps to run the broadcasting system locally.
 ```bash
   npm start
 ```
+
+
 
 The application will launch in your default web browser at http://localhost:3000.
