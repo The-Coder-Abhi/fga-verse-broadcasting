@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import OBSWebSocket from 'obs-websocket-js';
+import './ObsSourceToggler.css';
 
 const obs = new OBSWebSocket();
 const TARGET_SCENE = "Song View Toggle";
@@ -58,12 +59,24 @@ export default function ObsSourceToggler() {
   };
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h2>OBS Status: {connected ? '🟢 Connected' : '🔴 Disconnected'}</h2>
-      <div style={{ display: 'flex', gap: '15px', marginTop: '20px' }}>
-        <button onClick={handleButton1} disabled={!connected}>1 (Right View)</button>
-        <button onClick={handleButton2} disabled={!connected}>2 (Middle View)</button>
-        <button onClick={handleButton3} disabled={!connected}>3 (Left View)</button>
+    <div className="obs-dock-container">
+      <h2 className="status-header">
+        OBS Status: <span className={connected ? "status-connected" : "status-disconnected"}>
+          {connected ? 'Connected' : 'Disconnected'}
+        </span>
+      </h2>
+      <p className="target-scene-text">Target Scene: <strong>{TARGET_SCENE}</strong></p>
+      
+      <div className="button-group">
+        <button className="premium-btn" onClick={handleButton1} disabled={!connected}>
+          Show Right View
+        </button>
+        <button className="premium-btn" onClick={handleButton2} disabled={!connected}>
+          Show Middle View
+        </button>
+        <button className="premium-btn" onClick={handleButton3} disabled={!connected}>
+          Show Left View
+        </button>
       </div>
     </div>
   );
