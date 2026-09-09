@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import OBSWebSocket from 'obs-websocket-js';
 
 const obs = new OBSWebSocket();
-const TARGET_SCENE = "Song View";
+const TARGET_SCENE = "Song View Toggle";
 
 export default function ObsSourceToggler() {
   const [connected, setConnected] = useState(false);
