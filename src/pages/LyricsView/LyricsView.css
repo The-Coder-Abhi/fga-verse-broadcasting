@@ -15,7 +15,7 @@ body.transparent-broadcast {
 }
 .lyrics-view-wrapper {
   background-color: #111111;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   /* border: 1px solid blue; */
   position: absolute;
   bottom: 0px;
