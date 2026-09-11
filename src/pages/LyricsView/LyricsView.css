@@ -122,7 +122,11 @@ body.transparent-broadcast {
 -------------------------------------- */
   .lyrics-view-text-box {
     position: absolute;
-    padding: 3%;
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:5%;
+    padding-bottom:3%;
+
     /* bottom: 0%;  */
     left: 7%;
     width: 90%;
