@@ -25,7 +25,7 @@ const LyricsView = () => {
   // Determine which text should currently be on screen
   const currentText = versionChanger ? presentation.body1 : presentation.body2;
   
-  const textRef = useFitText(currentText, 120);
+  const textRef = useFitText(currentText, 70);
   
   useFirebaseDisconnect(db);
 
