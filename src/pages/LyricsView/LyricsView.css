@@ -17,7 +17,6 @@ body.transparent-broadcast {
   background: url("../../img/Lower\ Third\ Design.png") center bottom no-repeat;
   background-size: cover;
   /* opacity: 0.8; */
-  border: 1px solid blue;
   position: absolute;
   bottom: 0px;
   left: 0;
