@@ -14,6 +14,7 @@ body.transparent-broadcast {
   }
 }
 .lyrics-view-wrapper {
+
   background-color: #111111;
   /* opacity: 0.8; */
   /* border: 1px solid blue; */
@@ -30,7 +31,7 @@ body.transparent-broadcast {
 /* The Image Container */
 .lyrics-view-graphic {
   width: 100vw;
-  height: 20vh;
+  height: 240px;
   /* background-image: url('../../img/LowerThird.png'); 
   background-size: cover;
   background-repeat: no-repeat;
