@@ -14,10 +14,10 @@ body.transparent-broadcast {
   }
 }
 .lyrics-view-wrapper {
-
-  background-color: #111111;
+  background: url("../../img/Lower\ Third\ Design.png") center bottom no-repeat;
+  background-size: cover;
   /* opacity: 0.8; */
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   position: absolute;
   bottom: 0px;
   left: 0;
@@ -80,7 +80,9 @@ body.transparent-broadcast {
   width: 90%;
   height: 190px;
 
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: #d4af37;
+  /* color: #e5c158; */
   text-shadow:
     2px 2px 4px rgba(0, 0, 0, 0.9),
     0px 0px 8px rgba(0, 0, 0, 0.7);
@@ -123,17 +125,18 @@ body.transparent-broadcast {
 -------------------------------------- */
   .lyrics-view-text-box {
     position: absolute;
-    padding-left:5%;
-    padding-right:5%;
-    padding-top:5%;
-    padding-bottom:3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 3%;
 
     /* bottom: 0%;  */
     left: 7%;
     width: 90%;
     height: 50%;
 
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #d4af37;
     text-shadow:
       2px 2px 4px rgba(0, 0, 0, 0.9),
       0px 0px 8px rgba(0, 0, 0, 0.7);
