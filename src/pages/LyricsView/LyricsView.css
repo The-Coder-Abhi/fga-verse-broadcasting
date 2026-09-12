@@ -124,7 +124,7 @@ body.transparent-broadcast {
    TEXT BOX 2 : VERSE BODY
 -------------------------------------- */
   .lyrics-view-text-box {
-    border: 3px solid green;
+    /* border: 3px solid green; */
     position: absolute;
     padding-left: 5%;
     padding-right: 5%;
