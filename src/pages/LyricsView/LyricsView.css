@@ -159,7 +159,7 @@ body.transparent-broadcast {
   }
   100% {
     transform: translateY(100%);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
