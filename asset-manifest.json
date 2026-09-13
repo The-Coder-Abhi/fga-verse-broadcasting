@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/fga-verse-broadcasting/static/css/main.71998ac7.css",
+    "main.css": "/fga-verse-broadcasting/static/css/main.ca1cbe7d.css",
     "main.js": "/fga-verse-broadcasting/static/js/main.d6516f83.js",
     "static/media/StageView.png": "/fga-verse-broadcasting/static/media/StageView.9bd78b14e0428a43f595.png",
     "static/media/LowerThird.png": "/fga-verse-broadcasting/static/media/LowerThird.5889001d1ba6162dcb0d.png",
     "static/media/Lower Third Design 03.png": "/fga-verse-broadcasting/static/media/Lower Third Design 03.9e605238af23e0bbd664.png",
     "static/media/logo.svg": "/fga-verse-broadcasting/static/media/logo.e94af782bdbb1a2e7e1429f91088f6c5.svg",
     "index.html": "/fga-verse-broadcasting/index.html",
-    "main.71998ac7.css.map": "/fga-verse-broadcasting/static/css/main.71998ac7.css.map",
+    "main.ca1cbe7d.css.map": "/fga-verse-broadcasting/static/css/main.ca1cbe7d.css.map",
     "main.d6516f83.js.map": "/fga-verse-broadcasting/static/js/main.d6516f83.js.map"
   },
   "entrypoints": [
-    "static/css/main.71998ac7.css",
+    "static/css/main.ca1cbe7d.css",
     "static/js/main.d6516f83.js"
   ]
 }
