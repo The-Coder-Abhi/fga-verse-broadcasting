@@ -170,3 +170,6 @@ body.transparent-broadcast {
   /* Instantly prevents clicking while it animates away */
   pointer-events: none !important; 
 }
+.Show {
+  animation: flyInFromBottom 1s ease-out 0.4s forwards;
+}
