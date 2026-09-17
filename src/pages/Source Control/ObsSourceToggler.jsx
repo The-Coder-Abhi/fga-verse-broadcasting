@@ -107,6 +107,14 @@ export default function ObsSourceToggler() {
       console.error('Error switching to Verse:', error);
     }
   };
+  const handlePause = async () => {
+    if (!connected) return;
+    try {
+      await obs.call('SetCurrentProgramScene', { sceneName: 'Pause' });
+    } catch (error) {
+      console.error('Error switching to Pause:', error);
+    }
+  };
 
   return (
     <div className="obs-dock-container">
@@ -158,6 +166,13 @@ export default function ObsSourceToggler() {
           disabled={!connected}
         >
           Verse
+        </button>
+        <button 
+          className="premium-btn emergency-btn" 
+          onClick={handlePause} 
+          disabled={!connected}
+        >
+          Pause
         </button>
       </div>
       
