@@ -101,8 +101,8 @@ export default function ObsSourceToggler() {
   const handleVerseView = async () => {
     if (!connected) return;
     try {
-      await obs.call('SetCurrentPreviewScene', { sceneName: 'Verse View' });
-      await obs.call('SetCurrentProgramScene', { sceneName: 'Song Verse TV' });
+      await obs.call('SetCurrentPreviewScene', { sceneName: 'Song Verse TV' });
+      await obs.call('SetCurrentProgramScene', { sceneName: 'Verse View' });
     } catch (error) {
       console.error('Error switching to Verse:', error);
     }
