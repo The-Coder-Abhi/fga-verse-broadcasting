@@ -56,10 +56,13 @@ const SplitStageView = ({ themeClass = "" }) => {
       try {
         if (isBlank) {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Main DSLR' });
+          await obs.call('SetCurrentPreviewScene', { sceneName: 'Main DSLR' });
         } else if (isSong) {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Song View' });
+          await obs.call('SetCurrentPreviewScene', { sceneName: 'Song Verse TV' });
         }else if (!isBlank && !isSong) {
           await obs.call('SetCurrentProgramScene', { sceneName: 'Verse View' });
+          await obs.call('SetCurrentPreviewScene', { sceneName: 'Verse View' });
         }
       } catch (error) {
         console.error("Scene switch failed", error);
