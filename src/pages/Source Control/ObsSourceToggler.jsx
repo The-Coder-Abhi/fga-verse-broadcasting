@@ -61,8 +61,8 @@ export default function ObsSourceToggler() {
   const handleFullScreenVerse = async () => {
     if (!connected) return;
     try {
-      await obs.call('SetCurrentPreviewScene', { sceneName: 'Verse' });
-      await obs.call('SetCurrentProgramScene', { sceneName: 'Verse' });
+      await obs.call('SetCurrentPreviewScene', { sceneName: 'Song Verse TV' });
+      await obs.call('SetCurrentProgramScene', { sceneName: 'Song Verse TV' });
     } catch (error) {
       console.error('Error switching to Full Screen Verse:', error);
     }
@@ -75,6 +75,16 @@ export default function ObsSourceToggler() {
       await obs.call('SetCurrentProgramScene', { sceneName: 'Main Camo' });
     } catch (error) {
       console.error('Error switching to Camera Emergency:', error);
+    }
+  };
+
+  const handleMainCamera = async () => {
+    if (!connected) return;
+    try {
+      await obs.call('SetCurrentPreviewScene', { sceneName: 'Main DSLR' });
+      await obs.call('SetCurrentProgramScene', { sceneName: 'Main DSLR' });
+    } catch (error) {
+      console.error('Error switching to Main Camera:', error);
     }
   };
 
@@ -91,7 +101,7 @@ export default function ObsSourceToggler() {
   const handleVerseView = async () => {
     if (!connected) return;
     try {
-      await obs.call('SetCurrentPreviewScene', { sceneName: 'Song Verse TV' });
+      await obs.call('SetCurrentPreviewScene', { sceneName: 'Verse View' });
       await obs.call('SetCurrentProgramScene', { sceneName: 'Song Verse TV' });
     } catch (error) {
       console.error('Error switching to Verse:', error);
@@ -122,6 +132,13 @@ export default function ObsSourceToggler() {
           disabled={!connected}
         >
           Camera Emergency
+        </button>
+        <button 
+          className="premium-btn emergency-btn" 
+          onClick={handleCameraEmergency} 
+          disabled={!connected}
+        >
+          Main Camera
         </button>
       </div>
 
