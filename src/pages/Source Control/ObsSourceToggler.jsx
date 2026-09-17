@@ -135,7 +135,7 @@ export default function ObsSourceToggler() {
         </button>
         <button 
           className="premium-btn emergency-btn" 
-          onClick={handleCameraEmergency} 
+          onClick={handleMainCamera} 
           disabled={!connected}
         >
           Main Camera
