@@ -122,10 +122,9 @@ const LyricsView = () => {
     }
     return null; 
   }
-  // <div className={`lyrics-view-wrapper ${isBlank ? 'Blank' : 'Show'}`}>
 
   return (
-      <div className={`lyrics-view-wrapper `}>
+    <div className={`lyrics-view-wrapper ${isBlank ? 'Blank' : 'Show'}`}>
       <div className="lyrics-view-graphic">
         
         {/* The Title Box */}
