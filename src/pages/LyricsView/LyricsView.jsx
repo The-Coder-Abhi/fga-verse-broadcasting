@@ -116,12 +116,12 @@ const LyricsView = () => {
     };
   }, []);
   
-  if (!presentation.body1) {
-    if(!presentation.body2){
-      return null;
-    }
-    return null; 
-  }
+  // if (!presentation.body1) {
+  //   if(!presentation.body2){
+  //     return null;
+  //   }
+  //   return null; 
+  // }
 
   return (
     <div className={`lyrics-view-wrapper ${isBlank ? 'Blank' : 'Show'}`}>
@@ -142,7 +142,7 @@ const LyricsView = () => {
 
         {/* The Main Verse Box */}
         <div ref={textRef} className="lyrics-view-text-box">
-          {currentText}
+          {!isBlank && currentText}
         </div>
         
 
