@@ -163,11 +163,11 @@ body.transparent-broadcast {
 
 .Blank {
   /* Triggers the flyout and fade animation */
-  animation: flyOutAndFade 0.8s ease-in forwards !important; 
+  animation: flyOutAndFade 0.5s ease-in forwards !important; 
   
   /* Instantly prevents clicking while it animates away */
   pointer-events: none !important; 
 }
 .Show {
-  animation: flyInFromBottom 0.8s ease-out 0.4s both;
+  animation: flyInFromBottom 0.5s ease-out 0.4s both;
 }
