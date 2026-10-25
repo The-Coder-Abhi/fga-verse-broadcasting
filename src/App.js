@@ -5,6 +5,7 @@ import SplitStageView from './pages/SplitStageView/SplitStageView';
 import LyricsView from './pages/LyricsView/LyricsView';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import ObsSourceToggler from './pages/Source Control/ObsSourceToggler';
+import PresenterDashboard from './pages/PresenterDashboard/PresenterDashboard';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/lyrics" element={<LyricsView/>}></Route>
       <Route path="/splitView" element={<SplitStageView  themeClass="newStageView"/>}></Route>
       <Route path="/sourceToggle" element={<ObsSourceToggler/>}></Route>
+      <Route path="/controller" element={<PresenterDashboard/>}></Route>
     </Routes>
     </HashRouter>
   );
