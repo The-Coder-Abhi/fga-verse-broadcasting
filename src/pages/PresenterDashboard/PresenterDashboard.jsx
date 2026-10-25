@@ -11,7 +11,8 @@ const PresenterDashboard = () => {
   // Navigation State
   const [activeBookId, setActiveBookId] = useState("1");
   const [activeChapterId, setActiveChapterId] = useState("1");
-  const [selectedVerseIndex, setSelectedVerseIndex] = useState(0);
+  // Start at -1 so no verse is selected on initial load
+  const [selectedVerseIndex, setSelectedVerseIndex] = useState(-1);
 
   // UI State
   const [versionA, setVersionA] = useState("HIN");
@@ -20,6 +21,16 @@ const PresenterDashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const [pinnedVerses, setPinnedVerses] = useState([]);
+
+  // Send an explicit blank command on initial app load
+  useEffect(() => {
+    set(ref(db, 'live_presentation'), {
+      title: "Blank",
+      body1: "Blank", 
+      body2: "",
+      type: "bible"
+    }).catch(console.error);
+  }, []);
 
   useEffect(() => {
     const loadBibles = async () => {
@@ -243,7 +254,7 @@ const PresenterDashboard = () => {
     ? (currentItemA.type === "verse" 
         ? `${getBilingualBookName(activeBookId)} ${activeChapterId}:${currentItemA.id}`
         : `${getBilingualBookName(activeBookId)} ${activeChapterId} (Caption)`)
-    : "Screen Blanked";
+    : `Browsing: ${getBilingualBookName(activeBookId)} Chapter ${activeChapterId}`;
 
   return (
     <div className="presenter-theme dashboard-container">
@@ -320,7 +331,7 @@ const PresenterDashboard = () => {
               onChange={(e) => {
                 setActiveBookId(e.target.value);
                 setActiveChapterId("1");
-                setSelectedVerseIndex(0);
+                setSelectedVerseIndex(-1); // Only navigate index, do not trigger verse
               }}
               className="nav-select"
             >
@@ -338,7 +349,7 @@ const PresenterDashboard = () => {
               value={activeChapterId}
               onChange={(e) => {
                 setActiveChapterId(e.target.value);
-                setSelectedVerseIndex(0);
+                setSelectedVerseIndex(-1); // Only navigate index, do not trigger verse
               }}
               className="nav-select"
             >
