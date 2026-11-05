@@ -30,7 +30,8 @@
     gap: 2rem;
     min-height: 0;
 }
-.text-fit-box{
+/* Update your existing text-fit-box */
+.text-fit-box {
     /* border: 1px solid red; */
     width: 100%;
     height: 100%;
@@ -39,13 +40,27 @@
     align-items: center; 
     justify-content: center; 
     text-align: center;
-    white-space: pre-line;
-    line-height: 1.2;
     overflow: hidden;
-    
 }
 .text-fit-box::-webkit-scrollbar {
     display: none;
+}
+
+/* ADD THESE NEW CLASSES BELOW IT */
+.inner-text {
+    width: 100%;
+    white-space: pre-wrap; /* Keeps normal spacing but allows wraps */
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: normal; /* Prevents words from breaking in the middle of letters */
+}
+
+.highlight-yellow {
+    display: block; 
+    color: #ffeb3b; 
+    margin: 0; /* Removed the margin completely to close the gap */
+    padding: 0;
 }
 .verse-body{
     /* border: 1px solid red; */

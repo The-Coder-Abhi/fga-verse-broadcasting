@@ -156,12 +156,13 @@ const PresenterDashboard = () => {
     const chapterQuery = match[2];
     const verseQuery = match[3] || "1";
 
-    const referenceBible = bibles["KJV"]?.data || bibles[versionA]?.data;
-    if (!referenceBible) return;
+    // 1. Use KJV to find the correct Book ID (so English abbreviations like "psa" work)
+    const searchBible = bibles["KJV"]?.data || bibles[versionA]?.data;
+    if (!searchBible) return;
 
     let foundBookId = null;
 
-    for (const [id, book] of Object.entries(referenceBible)) {
+    for (const [id, book] of Object.entries(searchBible)) {
       if (book.name.toLowerCase().startsWith(bookQuery)) {
         foundBookId = id;
         break;
@@ -169,9 +170,15 @@ const PresenterDashboard = () => {
     }
 
     if (foundBookId) {
-      const chapterData = referenceBible[foundBookId].chapters[chapterQuery];
-      if (chapterData) {
-        const vIndex = chapterData.findIndex((v) => v.id === verseQuery && v.type === "verse");
+      // 2. CRITICAL FIX: Look up the target verse index inside versionA (the primary display translation).
+      // This prevents misalignment if Hindi has captions but English doesn't.
+      const targetBibleA = bibles[versionA]?.data;
+      const chapterDataA = targetBibleA?.[foundBookId]?.chapters?.[chapterQuery];
+      
+      if (chapterDataA) {
+        // Find the specific index of the VERSE in the target translation
+        const vIndex = chapterDataA.findIndex((v) => v.id === verseQuery && v.type === "verse");
+        
         if (vIndex !== -1) {
           setActiveBookId(foundBookId);
           setActiveChapterId(chapterQuery);
@@ -181,7 +188,7 @@ const PresenterDashboard = () => {
           alert(`Verse ${verseQuery} not found in Chapter ${chapterQuery}`);
         }
       } else {
-        alert(`Chapter ${chapterQuery} not found in ${referenceBible[foundBookId].name}`);
+        alert(`Chapter ${chapterQuery} not found.`);
       }
     } else {
       alert(`Book matching "${bookQuery}" not found.`);
