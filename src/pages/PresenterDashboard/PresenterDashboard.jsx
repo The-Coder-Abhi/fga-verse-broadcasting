@@ -60,6 +60,33 @@ const PresenterDashboard = () => {
           }
         } catch (e) { console.error("Hindi Load Error:", e); }
 
+        try {
+          const resMal = await fetch(`${baseUrl}/bibles/malyalam_bible.xml`); // Ensure this matches your exact filename
+          if (resMal.ok) {
+            const xml = await resMal.text();
+            const bookNames = versionData.version.find((v) => v.name === "Malayalam")?.booknames || [];
+            loadedBibles["MAL"] = { id: "MAL", name: "Malayalam", data: parseBibleXML(xml, bookNames) };
+          }
+        } catch (e) { console.error("Malayalam Load Error:", e); }
+
+        try {
+          const resMar = await fetch(`${baseUrl}/bibles/marathi_bible.xml`); // Ensure this matches your exact filename
+          if (resMar.ok) {
+            const xml = await resMar.text();
+            const bookNames = versionData.version.find((v) => v.name === "Marathi")?.booknames || [];
+            loadedBibles["MAR"] = { id: "MAR", name: "Marathi", data: parseBibleXML(xml, bookNames) };
+          }
+        } catch (e) { console.error("Marathi Load Error:", e); }
+
+        try {
+          const resNiv = await fetch(`${baseUrl}/bibles/english_niv.xml`); // Ensure this matches your exact filename
+          if (resNiv.ok) {
+            const xml = await resNiv.text();
+            const bookNames = versionData.version.find((v) => v.name === "English (NIV)")?.booknames || [];
+            loadedBibles["NIV"] = { id: "NIV", name: "English (NIV)", data: parseBibleXML(xml, bookNames) };
+          }
+        } catch (e) { console.error("NIV Load Error:", e); }
+
         setBibles(loadedBibles);
       } catch (error) {
         console.error("Master Load Error:", error);
