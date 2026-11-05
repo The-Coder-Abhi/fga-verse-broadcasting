@@ -1,18 +1,28 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Serif+Devanagari:wght@100..900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Serif+Devanagari:wght@100..900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Serif+Devanagari:wght@100..900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    font-size: 90%;
+html {
+  font-size: 90%;
 }
-body{
-    background-color: transparent !important;
-    color: #f7f7f7;
-    font-family: "Montserrat", sans-serif;
-    overflow-x: hidden;
+body {
+  background-color: transparent !important;
+  color: #f7f7f7;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+.verifying {
+  height: "100vh";
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  background-color: "#090e17";
+  color: "#0ab7ea";
+  font-size: "1.5rem";
+  font-weight: "bold";
 }
 
 /* @media screen and (max-width:1200px) {
