@@ -15,14 +15,14 @@ body {
   overflow-x: hidden;
 }
 .verifying {
-  height: "100vh";
-  display: "flex";
-  align-items: "center";
-  justify-content: "center";
-  background-color: "#090e17";
-  color: "#0ab7ea";
-  font-size: "1.5rem";
-  font-weight: "bold";
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #090e17;
+  color: #0ab7ea;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* @media screen and (max-width:1200px) {

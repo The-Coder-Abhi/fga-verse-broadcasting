@@ -1,46 +1,46 @@
 .login_container {
-  height: "100vh";
-  display: "flex";
-  align-items: "center";
-  justify-content: "center";
-  background-color: "#090e17";
-  color: "#fff";
-  font-family: "sans-serif";
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #090e17;
+  color: #fff;
+  font-family: sans-serif;
 }
 .login_form {
-  display: "flex";
-  flex-direction: "column";
-  gap: "1rem";
-  width: "300px";
-  padding: "2rem";
-  background-color: "#131b2c";
-  border-radius: "8px";
-  border: "1px solid #1e293b";
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  padding: 2rem;
+  background-color: #131b2c;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
 }
 .login_form h2 {
-  text-align: "center";
-  margin: "0 0 1rem 0";
-  color: "#0ab7ea";
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: #0ab7ea;
 }
 .login_form .error_message {
-  color: "#ff4d4d";
-  font-size: "14px";
-  text-align: "center";
+  color: #ff4d4d;
+  font-size: 14px;
+  text-align: center;
 }
 .login_form input {
-  padding: "10px";
-  border-radius: "4px";
-  border: "1px solid #334155";
-  background-color: "#090e17";
-  color: "#fff";
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #334155;
+  background-color: #090e17;
+  color: #fff;
 }
 .login_form button {
-  padding: "10px";
-  margin-top: "10px";
-  border-radius: "4px";
-  border: "none";
-  background-color: "#0ab7ea";
-  color: "#fff";
-  font-weight: "bold";
-  cursor: "pointer";
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #0ab7ea;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
