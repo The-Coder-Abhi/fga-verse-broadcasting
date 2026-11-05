@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { parseBibleXML } from "../../utils/bibleParser";
 import { ref, set } from "firebase/database";
 import { db } from "../../services/firebase"; 
@@ -71,7 +71,10 @@ const PresenterDashboard = () => {
     loadBibles();
   }, []);
 
-  const activeChapterDataA = bibles[versionA]?.data?.[activeBookId]?.chapters?.[activeChapterId] || [];
+  const activeChapterDataA = useMemo(() => {
+    return bibles[versionA]?.data?.[activeBookId]?.chapters?.[activeChapterId] || [];
+  }, [bibles, versionA, activeBookId, activeChapterId]);
+
   const activeChapterDataB = bibles[versionB]?.data?.[activeBookId]?.chapters?.[activeChapterId] || [];
   
   const getBilingualBookName = useCallback((bookId) => {
