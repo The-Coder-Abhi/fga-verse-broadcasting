@@ -230,17 +230,25 @@ const PresenterDashboard = () => {
 
     const syncToFirebase = async () => {
       try {
-        let displayTitle = currentItemA.ref;
+        // Provide a safe fallback title to prevent Firebase 'undefined' errors
+        let displayTitle = "Live Presentation"; 
+        
         if (currentItemA.type === "verse") {
           displayTitle = `${getBilingualBookName(activeBookId)} ${activeChapterId}:${currentItemA.id}`;
+        } else if (currentItemA.type === "caption") {
+          // Explicitly handle captions so they have a valid title!
+          displayTitle = `${getBilingualBookName(activeBookId)} ${activeChapterId} (Caption)`;
+        } else if (currentItemA.ref) {
+          displayTitle = currentItemA.ref;
         }
 
         const payload = {
           title: displayTitle,
-          body1: currentItemA.text, 
-          body2: currentItemB ? currentItemB.text : "",
+          body1: currentItemA.text || "", // Fallback to empty string if undefined
+          body2: currentItemB ? (currentItemB.text || "") : "",
           type: "bible"
         };
+        
         await set(ref(db, 'live_presentation'), payload);
       } catch (error) {
         console.error("Firebase Sync Error:", error);
