@@ -104,7 +104,6 @@ const SplitStageView = ({ themeClass = "" }) => {
     const parts = text.split(/(\*\*\*.*?\*\*\*)/g);
     
     return parts.map((part, index) => {
-      // 1. Handle the yellow highlighted text
       if (part.startsWith("***") && part.endsWith("***")) {
         const innerText = part.slice(3, -3);
         return (
@@ -114,13 +113,11 @@ const SplitStageView = ({ themeClass = "" }) => {
         );
       }
       
-      // 2. Handle the regular text (The Fix)
-      // This regex (/\s+/g) finds all multiple spaces, tabs, and hidden newlines 
-      // caused by the XML <BR> tags and replaces them with a single normal space.
-      let cleanText = part.replace(/\s+/g, ' ').trim();
-      
-      // Don't render empty spans if the text was just spaces
-      if (!cleanText) return null;
+      // Prevent double-gaps by stripping hidden newlines immediately after the yellow text
+      let cleanText = part;
+      if (index > 0 && parts[index - 1].startsWith("***")) {
+         cleanText = part.replace(/^\s*[\r\n]+\s*/g, ' '); 
+      }
       
       return <span key={index}>{cleanText}</span>;
     });
