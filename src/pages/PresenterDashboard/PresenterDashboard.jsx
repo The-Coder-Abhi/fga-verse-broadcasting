@@ -8,10 +8,12 @@ const PresenterDashboard = () => {
   const [bibles, setBibles] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  // Mobile Menu State
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Navigation State
   const [activeBookId, setActiveBookId] = useState("1");
   const [activeChapterId, setActiveChapterId] = useState("1");
-  // Start at -1 so no verse is selected on initial load
   const [selectedVerseIndex, setSelectedVerseIndex] = useState(-1);
 
   // UI State
@@ -22,7 +24,6 @@ const PresenterDashboard = () => {
 
   const [pinnedVerses, setPinnedVerses] = useState([]);
 
-  // Send an explicit blank command on initial app load
   useEffect(() => {
     set(ref(db, 'live_presentation'), {
       title: "Blank",
@@ -61,7 +62,7 @@ const PresenterDashboard = () => {
         } catch (e) { console.error("Hindi Load Error:", e); }
 
         try {
-          const resMal = await fetch(`${baseUrl}/bibles/malyalam_bible.xml`); // Ensure this matches your exact filename
+          const resMal = await fetch(`${baseUrl}/bibles/malyalam_bible.xml`);
           if (resMal.ok) {
             const xml = await resMal.text();
             const bookNames = versionData.version.find((v) => v.name === "Malayalam")?.booknames || [];
@@ -145,7 +146,7 @@ const PresenterDashboard = () => {
         });
       }
     },
-    [activeChapterDataA],
+    [activeChapterDataA]
   );
 
   useEffect(() => {
@@ -161,7 +162,6 @@ const PresenterDashboard = () => {
         body2: "",
         type: "bible"
       });
-      // Clear the local selection so clicking the same verse re-triggers the sync
       setSelectedVerseIndex(-1);
     } catch (error) {
       console.error("Firebase Blank Error:", error);
@@ -183,7 +183,6 @@ const PresenterDashboard = () => {
     const chapterQuery = match[2];
     const verseQuery = match[3] || "1";
 
-    // 1. Use KJV to find the correct Book ID (so English abbreviations like "psa" work)
     const searchBible = bibles["KJV"]?.data || bibles[versionA]?.data;
     if (!searchBible) return;
 
@@ -197,13 +196,10 @@ const PresenterDashboard = () => {
     }
 
     if (foundBookId) {
-      // 2. CRITICAL FIX: Look up the target verse index inside versionA (the primary display translation).
-      // This prevents misalignment if Hindi has captions but English doesn't.
       const targetBibleA = bibles[versionA]?.data;
       const chapterDataA = targetBibleA?.[foundBookId]?.chapters?.[chapterQuery];
       
       if (chapterDataA) {
-        // Find the specific index of the VERSE in the target translation
         const vIndex = chapterDataA.findIndex((v) => v.id === verseQuery && v.type === "verse");
         
         if (vIndex !== -1) {
@@ -232,7 +228,7 @@ const PresenterDashboard = () => {
   );
 
   const handleTogglePin = () => {
-    if (selectedVerseIndex === -1) return; // Prevent pinning a blank screen
+    if (selectedVerseIndex === -1) return;
 
     if (isCurrentlyPinned) {
       setPinnedVerses((prev) => prev.filter(
@@ -257,13 +253,11 @@ const PresenterDashboard = () => {
 
     const syncToFirebase = async () => {
       try {
-        // Provide a safe fallback title to prevent Firebase 'undefined' errors
         let displayTitle = "Live Presentation"; 
         
         if (currentItemA.type === "verse") {
           displayTitle = `${getBilingualBookName(activeBookId)} ${activeChapterId}:${currentItemA.id}`;
         } else if (currentItemA.type === "caption") {
-          // Explicitly handle captions so they have a valid title!
           displayTitle = `${getBilingualBookName(activeBookId)} ${activeChapterId} (Caption)`;
         } else if (currentItemA.ref) {
           displayTitle = currentItemA.ref;
@@ -271,7 +265,7 @@ const PresenterDashboard = () => {
 
         const payload = {
           title: displayTitle,
-          body1: currentItemA.text || "", // Fallback to empty string if undefined
+          body1: currentItemA.text || "", 
           body2: currentItemB ? (currentItemB.text || "") : "",
           type: "bible"
         };
@@ -294,7 +288,6 @@ const PresenterDashboard = () => {
     );
   }
 
-  // Derive the bilingual title for the Live Preview Header
   const previewTitle = currentItemA 
     ? (currentItemA.type === "verse" 
         ? `${getBilingualBookName(activeBookId)} ${activeChapterId}:${currentItemA.id}`
@@ -303,8 +296,24 @@ const PresenterDashboard = () => {
 
   return (
     <div className="presenter-theme dashboard-container">
+      
+      {/* Background Overlay for Mobile Menu */}
+      <div 
+        className={`sidebar-overlay ${isMobileMenuOpen ? "open" : ""}`} 
+        onClick={() => setIsMobileMenuOpen(false)}
+      ></div>
+
       <header className="top-navbar">
-        <div className="brand-title">Verse Controller</div>
+        <div className="navbar-left">
+          <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(true)}>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div className="brand-title">Verse Controller</div>
+        </div>
         
         <form onSubmit={handleSearch} className="search-form">
           <input
@@ -316,9 +325,9 @@ const PresenterDashboard = () => {
           />
         </form>
 
-        <div className="header-actions" style={{ flex: 1, justifyContent: 'flex-end', overflow: 'hidden' }}>
+        <div className="header-actions">
           {pinnedVerses.length > 0 && (
-            <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingRight: '1rem', alignItems: 'center' }}>
+            <div className="pinned-verses-scroll">
               {pinnedVerses.map((pv) => {
                 const isActivePin = pv.bookId === activeBookId && pv.chapterId === activeChapterId && pv.verseIndex === selectedVerseIndex;
                 return (
@@ -348,7 +357,7 @@ const PresenterDashboard = () => {
             <svg className="icon-pin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
             </svg>
-            {isCurrentlyPinned ? "Unpin" : "Pin"}
+            <span className="hide-on-mobile">{isCurrentlyPinned ? "Unpin" : "Pin"}</span>
           </button>
           <button onClick={handleBlankScreen} className="btn-blank">
             BLANK
@@ -357,7 +366,7 @@ const PresenterDashboard = () => {
       </header>
 
       <div className="main-layout">
-        <aside className="sidebar-index">
+        <aside className={`sidebar-index ${isMobileMenuOpen ? "open" : ""}`}>
           <div className="sidebar-nav-header">
             <select
               value={indexVersion}
@@ -366,7 +375,7 @@ const PresenterDashboard = () => {
             >
               {Object.values(bibles).map((b) => (
                 <option key={b.id} value={b.id}>
-                  Index Language: {b.name}
+                  Index: {b.name}
                 </option>
               ))}
             </select>
@@ -376,7 +385,7 @@ const PresenterDashboard = () => {
               onChange={(e) => {
                 setActiveBookId(e.target.value);
                 setActiveChapterId("1");
-                setSelectedVerseIndex(-1); // Only navigate index, do not trigger verse
+                setSelectedVerseIndex(-1); 
               }}
               className="nav-select"
             >
@@ -394,7 +403,7 @@ const PresenterDashboard = () => {
               value={activeChapterId}
               onChange={(e) => {
                 setActiveChapterId(e.target.value);
-                setSelectedVerseIndex(-1); // Only navigate index, do not trigger verse
+                setSelectedVerseIndex(-1); 
               }}
               className="nav-select"
             >
@@ -419,7 +428,10 @@ const PresenterDashboard = () => {
               return (
                 <button
                   key={`${item.type}-${item.id}`}
-                  onClick={() => setSelectedVerseIndex(index)}
+                  onClick={() => {
+                    setSelectedVerseIndex(index);
+                    setIsMobileMenuOpen(false); // Auto-close drawer on selection
+                  }}
                   className={`verse-btn ${selectedVerseIndex === index ? "active" : ""}`}
                   style={item.type === "caption" ? { fontStyle: "italic", opacity: 0.8 } : {}}
                 >

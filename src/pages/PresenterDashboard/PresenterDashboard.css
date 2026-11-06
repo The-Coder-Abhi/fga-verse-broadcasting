@@ -344,3 +344,145 @@
 .presenter-theme .verse-card.selected .verse-number {
   color: var(--accent-blue);
 }
+
+/* New Navbar Alignment */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-btn {
+  display: none; /* Hidden on Desktop */
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.sidebar-overlay {
+  display: none; /* Hidden by default */
+}
+
+.pinned-verses-scroll {
+  display: flex; 
+  gap: 0.5rem; 
+  overflow-x: auto; 
+  padding-right: 0.5rem; 
+  align-items: center;
+}
+.pinned-verses-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================= */
+
+@media screen and (max-width: 1024px) {
+  /* 1. Force the Navbar to stack into 3 clean rows */
+  .top-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  /* Row 1: Hamburger & Title */
+  .navbar-left {
+    width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: block; 
+  }
+
+  /* Row 2: Full Width Search Bar */
+  .search-form {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+
+  /* Row 3: Actions Wrapper (Pin and Blank) pushed to the bottom right */
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Since we have a full row for buttons now, we can show the "Pin" text again! */
+  .hide-on-mobile {
+    display: inline; 
+  }
+  
+  .btn-pin {
+    padding: 0.5rem 1rem; /* Restore normal padding */
+  }
+
+  .btn-blank {
+    padding: 0.5rem 1.5rem;
+  }
+
+  /* Slide-out Sidebar Drawer */
+  .sidebar-index {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 320px;
+    max-width: 85%;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    border-right: 1px solid #1e293b;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+  }
+
+  .sidebar-index.open {
+    left: 0; 
+  }
+
+  /* Dark background overlay behind the menu */
+  .sidebar-overlay.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+  }
+
+  .preview-area {
+    width: 100%;
+  }
+
+  .sidebar-nav-header {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  .nav-select, .version-select {
+    width: 100%;
+  }
+
+  .dropdown-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Stack verses vertically */
+  .verses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem;
+  }
+
+  .preview-header h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
