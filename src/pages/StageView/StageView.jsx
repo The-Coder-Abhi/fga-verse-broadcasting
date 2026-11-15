@@ -25,10 +25,14 @@ const StageView = ({ themeClass = "" }) => {
 
   useEffect(() => {
     const presentationRef = dbRef(db, 'live_presentation');
+
     
     const unsubscribe = onValue(presentationRef, (snapshot) => {
       const data = snapshot.val();
       if(data){
+        if (data.body1 === "Blank") {
+              return; 
+            }
         setPresentation({
           title: data.title || "",
           body1: data.body1 || "",
