@@ -102,6 +102,7 @@ const SplitStageView = ({ themeClass = "" }) => {
     if (!text) return "";
     
     const parts = text.split(/(\*\*\*.*?\*\*\*)/g);
+    const isSongType = presentation.type === "song";
     
     return parts.map((part, index) => {
       // Handle the yellow highlighted text
@@ -117,7 +118,11 @@ const SplitStageView = ({ themeClass = "" }) => {
       // Handle the regular text (The Fix)
       // This regex (/\s+/g) finds all multiple spaces, tabs, and hidden newlines 
       // caused by the XML <BR> tags and replaces them with a single normal space.
-      let cleanText = part.replace(/\s+/g, ' ').trim();
+      // let cleanText = part.replace(/\s+/g, ' ').trim();
+      // 2. Keep newlines for songs, flatten them for verses
+      let cleanText = isSongType
+        ? part.replace(/[ \t]+/g, ' ') // cleans extra spaces/tabs, keeps \n
+        : part.replace(/\s+/g, ' ').trim();
       
       // Don't render empty spans if the text was just spaces
       if (!cleanText) return null;
